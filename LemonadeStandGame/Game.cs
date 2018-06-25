@@ -11,13 +11,14 @@ namespace LemonadeStandGame
         public UserInterface userInterface;
         public Game()
         {
-            
+            userInterface = new UserInterface();
         }
         public void ExecuteGame()
         {
-            userInterface = new UserInterface();
+            
             userInterface.DisplayWelcome();
             userInterface.DisplayRules();
+            userInterface.MainMenu();
         }
 
 
