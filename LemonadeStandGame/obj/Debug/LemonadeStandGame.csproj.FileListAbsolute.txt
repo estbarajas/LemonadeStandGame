@@ -1,0 +1,7 @@
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\LemonadeStandGame.exe.config
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\LemonadeStandGame.exe
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\LemonadeStandGame.pdb
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.csprojAssemblyReference.cache
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.csproj.CoreCompileInputs.cache
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.exe
+C:\Users\Esteban\Desktop\Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.pdb
