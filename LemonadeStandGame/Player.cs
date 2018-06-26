@@ -10,6 +10,7 @@ namespace LemonadeStandGame
     {
         public string name;
         public Inventory inventory;
+        public Recipe recipe;
         public Player()
         {
             inventory = new Inventory();

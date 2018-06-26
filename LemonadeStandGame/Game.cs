@@ -75,6 +75,10 @@ namespace LemonadeStandGame
         {
             userInterface.StoreMenu();
         }
+        public void DisplayRecipe()
+        {
+
+        }
         public void ExitGame()
         {
             Environment.Exit(0);
