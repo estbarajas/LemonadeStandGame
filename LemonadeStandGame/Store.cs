@@ -8,5 +8,25 @@ namespace LemonadeStandGame
 {
     class Store
     {
+        public Store()
+        {
+
+        }
+        public void BuyLemons()
+        {
+
+        }
+        public void BuySugar()
+        {
+
+        }
+        public void BuyIce()
+        {
+
+        }
+        public void BuyCups()
+        {
+
+        }
     }
 }
