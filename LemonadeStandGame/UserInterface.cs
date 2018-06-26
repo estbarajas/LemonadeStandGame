@@ -19,7 +19,7 @@ namespace LemonadeStandGame
         public static List<string> AddGameRule()
         {
             List<string> gameRules = new List<string>();
-            gameRules.Add("\nGame rules:");
+            gameRules.Add("\nGame rules:\n");
             gameRules.Add("\n[You decided to open a lemonade stand]");
             gameRules.Add("[Buy ingredients from the shop to create lemonade]");
             gameRules.Add("\n[Make the perfect lemonade recipe]");
@@ -46,10 +46,19 @@ namespace LemonadeStandGame
 
         public void StoreMenu()
         {
-            Console.WriteLine("\n  |Store\n");
-            Console.WriteLine("  \tWe have: \n\t1[Lemons] \n\t2[Sugar] \n\t3[Ice] \n\t4[Cups].");
-            Console.WriteLine("  \n\tWhich would you like to purchase? Otherwise type 'exit' to finish buying.");
+            Console.WriteLine("\nGame Store");
+            Console.WriteLine("\nWe sell: \n\n1. [Lemons] \n\n2. [Sugar] \n\n3. [Ice] \n\n4. [Cups]");
+            Console.WriteLine("\nWhich would you like to purchase? Otherwise type 'exit' to finish buying.");
         }
-
+        public void InventoryInterface()
+        {
+            Console.WriteLine("Your item stock:");
+            //lemons
+            
+            //sugar
+            //ice
+            //cups
+            //press enter to Continue
+        }
     }
 }

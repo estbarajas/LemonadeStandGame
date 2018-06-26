@@ -29,16 +29,19 @@ namespace LemonadeStandGame
             userInput = Console.ReadLine();
             if (userInput == "1")
             {
-                //while()
-                //{
-                    //only call functions here xD
-                //}
-                Console.Clear();
-                userInterface.StoreMenu();
-                //store.BuyLemons(player.inventory);
-                //store.BuyLemons(player.inventory);
-                //player.inventory.DisplayLemonAmmount();
-                //userInterface.StoreMenu();
+                //while loop
+                while(true)
+                {
+                    Console.Clear();
+                    DisplayInventory();
+                    PressEnterToContinue();
+                    Console.ReadLine();
+                    Console.Clear();
+                    DisplayStore();
+                    Console.ReadLine();
+                }
+                //Console.Clear();
+                //DisplayInventory();   
             }
             else if (userInput == "2")
             {
@@ -60,9 +63,25 @@ namespace LemonadeStandGame
                 ExecuteGame();
             }
         }
+        public void DisplayInventory()
+        {
+            Console.WriteLine("\nInventory:\n");
+            player.inventory.DisplayLemonAmmount();
+            player.inventory.DisplaySugarAmmount();
+            player.inventory.DisplayIceAmmount();
+            player.inventory.DisplayCupAmmount();
+        }
+        public void DisplayStore()
+        {
+            userInterface.StoreMenu();
+        }
         public void ExitGame()
         {
             Environment.Exit(0);
+        }
+        public void PressEnterToContinue()
+        {
+            Console.WriteLine("\nPress |ENTER| to continue.");
         }
     }
 }

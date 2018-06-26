@@ -21,11 +21,19 @@ namespace LemonadeStandGame
         }
         public void DisplayLemonAmmount()
         {
-            Console.WriteLine(lemons.Count);
+            Console.WriteLine("\n[Ammount of lemons owned: " + lemons.Count + "]");
         }
         public void DisplaySugarAmmount()
         {
-            Console.WriteLine(sugar.Count);
+            Console.WriteLine("\n[Ammount of sugar owned: " + sugar.Count + "]");
+        }
+        public void DisplayIceAmmount()
+        {
+            Console.WriteLine("\n[Ammount of ice owned: " + ice.Count + "]");
+        }
+        public void DisplayCupAmmount()
+        {
+            Console.WriteLine("\n[Ammount of cups owned: " + cups.Count + "]");
         }
     }
 }
