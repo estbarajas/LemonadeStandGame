@@ -14,7 +14,7 @@ namespace LemonadeStandGame
         }
         public void DisplayWelcome()
         {
-            Console.WriteLine("\tWelcome to the Lemonade Stand Game!");
+            Console.WriteLine("\nWelcome to the Lemonade Stand Game!");
         }
         public static List<string> AddGameRule()
         {
@@ -28,6 +28,7 @@ namespace LemonadeStandGame
             gameRules.Add("[Be aware that price, weather, and recipe can affect sales]");
             gameRules.Add("\n[Try to maintain customer satisfaction up]");
             gameRules.Add("[Goodluck!]");
+            gameRules.Add("\n\n[Press ENTER to continue.]");
             return gameRules;
         }
         public void DisplayRules()
@@ -40,7 +41,7 @@ namespace LemonadeStandGame
 
         public void MainMenu()
         {
-
+            Console.WriteLine("\n\n1. [Start] \n\n2. [Rules] \n\n3. [Exit]");
         }
     }
 }
