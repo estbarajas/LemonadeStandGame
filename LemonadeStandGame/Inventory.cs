@@ -8,17 +8,21 @@ namespace LemonadeStandGame
 {
     class Inventory
     {
-        public Item lemon;
-        public Item sugar;
-        public Item ice;
-        public Item cup;
-        public Inventory()
+        public List<Lemon> lemons;
+        public List<Sugar> sugar;
+        public List<Ice> ice;
+        public List<Cup> cups;
+        public Inventory()      
         {
-            lemon = new Lemon();
-            sugar = new Sugar();
-            ice = new Ice();
-            cup = new Cup();
+            lemons = new List<Lemon>();
+            sugar = new List<Sugar>();
+            ice = new List<Ice>();
+            cups = new List<Cup>();
         }
-        //display amount of each
+        public void DisplayAmmountOfLemons()
+        {
+            Console.WriteLine(lemons.Count);
+        }
+
     }
 }

@@ -12,11 +12,15 @@ namespace LemonadeStandGame
         {
 
         }
-        public void BuyLemons()
-        {
-
+        public void BuyLemons(Inventory inventory) //CHANGE THE HARD CODED 100
+        {          
+            for (int i = 0; i < 100; i++)
+            {
+                Lemon lemon = new Lemon();
+                inventory.lemons.Add(lemon);
+            }
         }
-        public void BuySugar()
+        public void BuySugar(Inventory inventory)
         {
 
         }

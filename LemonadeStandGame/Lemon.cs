@@ -12,14 +12,5 @@ namespace LemonadeStandGame
         {
             name = "Lemon";
         }
-        private static List<string> AddLemon(int passedAmmount)
-        {
-            List<string> lemons = new List<string>();
-            for (int i=0; i < passedAmmount; i++)
-            {
-                lemons.Add("Lemon " + i);
-            }         
-            return lemons;
-        }
     }
 }
