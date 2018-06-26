@@ -19,10 +19,13 @@ namespace LemonadeStandGame
             ice = new List<Ice>();
             cups = new List<Cup>();
         }
-        public void DisplayAmmountOfLemons()
+        public void DisplayLemonAmmount()
         {
             Console.WriteLine(lemons.Count);
         }
-
+        public void DisplaySugarAmmount()
+        {
+            Console.WriteLine(sugar.Count);
+        }
     }
 }

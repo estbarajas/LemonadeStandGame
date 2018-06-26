@@ -9,10 +9,14 @@ namespace LemonadeStandGame
     class Game
     {
         public UserInterface userInterface;
+        public Store store;
+        public Player player;
         public string userInput;
         public Game()
         {
             userInterface = new UserInterface();
+            store = new Store();
+            player = new Player();
         }
         public void ExecuteGame()
         {       
@@ -25,7 +29,16 @@ namespace LemonadeStandGame
             userInput = Console.ReadLine();
             if (userInput == "1")
             {
-                Console.WriteLine("Playing Game xD...");
+                //while()
+                //{
+                    //only call functions here xD
+                //}
+                Console.Clear();
+                userInterface.StoreMenu();
+                //store.BuyLemons(player.inventory);
+                //store.BuyLemons(player.inventory);
+                //player.inventory.DisplayLemonAmmount();
+                //userInterface.StoreMenu();
             }
             else if (userInput == "2")
             {

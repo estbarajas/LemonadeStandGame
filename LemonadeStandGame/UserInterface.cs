@@ -43,5 +43,13 @@ namespace LemonadeStandGame
         {
             Console.WriteLine("\n\n1. [Start] \n\n2. [Rules] \n\n3. [Exit]");
         }
+
+        public void StoreMenu()
+        {
+            Console.WriteLine("\n  |Store\n");
+            Console.WriteLine("  \tWe have: \n\t1[Lemons] \n\t2[Sugar] \n\t3[Ice] \n\t4[Cups].");
+            Console.WriteLine("  \n\tWhich would you like to purchase? Otherwise type 'exit' to finish buying.");
+        }
+
     }
 }

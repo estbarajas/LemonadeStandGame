@@ -9,9 +9,11 @@ namespace LemonadeStandGame
     class Player
     {
         public string name;
+        public Inventory inventory;
         public Player()
         {
-
+            inventory = new Inventory();
+            name = "John";
         }
     }
 }

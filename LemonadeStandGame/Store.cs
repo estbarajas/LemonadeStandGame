@@ -19,6 +19,7 @@ namespace LemonadeStandGame
                 Lemon lemon = new Lemon();
                 inventory.lemons.Add(lemon);
             }
+            Console.WriteLine("Ammount of lemons: " + inventory.lemons.Count);
         }
         public void BuySugar(Inventory inventory)
         {
