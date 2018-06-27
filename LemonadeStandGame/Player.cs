@@ -11,6 +11,7 @@ namespace LemonadeStandGame
         public string name;
         public Inventory inventory;
         public Recipe recipe;
+        public Wallet wallet;
         public Player()
         {
             inventory = new Inventory();
