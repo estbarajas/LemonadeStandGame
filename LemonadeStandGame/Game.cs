@@ -39,6 +39,9 @@ namespace LemonadeStandGame
                     Console.Clear();
                     DisplayStore();
                     Console.ReadLine();
+                    Console.Clear();
+                    DisplayRecipe();
+                    //Console.ReadLine();
                 }
                 //Console.Clear();
                 //DisplayInventory();   
@@ -74,10 +77,14 @@ namespace LemonadeStandGame
         public void DisplayStore()
         {
             userInterface.StoreMenu();
+            store.BuyLemons(player.inventory);
+            store.BuySugar(player.inventory);
+            store.BuyIce(player.inventory);
+            store.BuyCups(player.inventory);
         }
         public void DisplayRecipe()
         {
-            Console.WriteLine("\nInventory:\n");
+            Console.WriteLine("\nRecipe:\n");
             player.recipe.UseLemonAmmount(player.inventory);
             player.recipe.UseIceAmmount(player.inventory);
             player.recipe.UseSugarAmmount(player.inventory);
@@ -89,7 +96,7 @@ namespace LemonadeStandGame
         }
         public void PressEnterToContinue()
         {
-            Console.WriteLine("\nPress |ENTER| to continue.");
+            Console.WriteLine("\n\nPress |ENTER| to continue.");
         }
     }
 }

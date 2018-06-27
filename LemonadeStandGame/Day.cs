@@ -8,5 +8,13 @@ namespace LemonadeStandGame
 {
     class Day
     {
+        public List<Customer> customers;
+        public Weather weather;
+        public Day()
+        {
+            customers = new List<Customer>();
+            weather = new Weather();
+        }
+
     }
 }

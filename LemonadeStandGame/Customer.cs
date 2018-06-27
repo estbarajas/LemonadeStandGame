@@ -8,5 +8,10 @@ namespace LemonadeStandGame
 {
     class Customer
     {
+        public string name;
+        public Customer()
+        {
+            name = "Default Customer";
+        }
     }
 }

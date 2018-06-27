@@ -15,7 +15,7 @@ namespace LemonadeStandGame
         {
             inventory = new Inventory();
             recipe = new Recipe();
-            name = "John";
+            name = "Default Stand";
         }
     }
 }

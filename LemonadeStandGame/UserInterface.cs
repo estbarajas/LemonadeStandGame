@@ -47,8 +47,8 @@ namespace LemonadeStandGame
         public void StoreMenu()
         {
             Console.WriteLine("\nGame Store");
-            Console.WriteLine("\nWe sell: \n\n1. [Lemons] \n\n2. [Sugar] \n\n3. [Ice] \n\n4. [Cups]");
-            Console.WriteLine("\nWhich would you like to purchase? Otherwise type 'exit' to finish buying.");
+            Console.WriteLine("\n\nWe sell: \n\n1. [Lemons] \n\n2. [Sugar] \n\n3. [Ice] \n\n4. [Cups]");
+            Console.WriteLine("\n\nWhich would you like to purchase? Otherwise type 'exit' to finish buying.");
         }
         public void InventoryInterface()
         {

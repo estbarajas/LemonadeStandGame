@@ -8,5 +8,16 @@ namespace LemonadeStandGame
 {
     class Weather
     {
+        public List<string> forecast;
+        public int temperature;
+        public Weather()
+        {
+
+        }
+
+        public void AddForecast()
+        {
+            
+        }
     }
 }

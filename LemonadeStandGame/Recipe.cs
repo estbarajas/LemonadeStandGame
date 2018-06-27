@@ -16,11 +16,12 @@ namespace LemonadeStandGame
         {
           
         }
-        public void UseLemonAmmount(Inventory inventory) // make this into a switchstatement xd
+        public void UseLemonAmmount(Inventory inventory) 
         {
             Console.WriteLine("Enter lemons per pitcher.");
             string userInput = Console.ReadLine();
             inventory.lemons.RemoveAt(inventory.lemons.Count - 1);
+            inventory.DisplayLemonAmmount();
         }
         public void UseSugarAmmount(Inventory inventory)
         {
