@@ -11,12 +11,14 @@ namespace LemonadeStandGame
         public UserInterface userInterface;
         public Store store;
         public Player player;
+        public Day day;
         public string userInput;
         public Game()
         {
             userInterface = new UserInterface();
             store = new Store();
             player = new Player();
+            day = new Day();
         }
         public void ExecuteGame()
         {       
@@ -32,19 +34,30 @@ namespace LemonadeStandGame
                 //while loop
                 while(true)
                 {
-                    Console.Clear();
+                    Console.Clear(); //INVENTORY
                     DisplayInventory();
                     PressEnterToContinue();
-                    Console.ReadLine();
-                    Console.Clear();
+
+                    Console.Clear(); //WEEKLYFORECAST
+                    DisplayWeeklyWeather();
+                    PressEnterToContinue();
+
+                    Console.Clear(); //STORE
                     DisplayStore();
-                    Console.ReadLine();
-                    Console.Clear();
+                    PressEnterToContinue();
+
+                    Console.Clear(); //RECIPE
                     DisplayRecipe();
-                    //Console.ReadLine();
-                }
-                //Console.Clear();
-                //DisplayInventory();   
+                    PressEnterToContinue();
+
+                    Console.Clear(); //INVENTORY
+                    DisplayInventory();
+                    PressEnterToContinue();
+
+                    Console.Clear(); //GAME
+                    Console.WriteLine("\t\nTHE GAME IS RUNNING HERE");
+                    PressEnterToContinue();
+                }     
             }
             else if (userInput == "2")
             {
@@ -90,6 +103,10 @@ namespace LemonadeStandGame
             player.recipe.UseSugarAmmount(player.inventory);
             player.recipe.UseCupAmmount(player.inventory);
         }
+        public void DisplayWeeklyWeather()
+        {
+            day.weather.GetWeeklyForecast();
+        }
         public void ExitGame()
         {
             Environment.Exit(0);
@@ -97,6 +114,7 @@ namespace LemonadeStandGame
         public void PressEnterToContinue()
         {
             Console.WriteLine("\n\nPress |ENTER| to continue.");
+            Console.ReadLine();
         }
     }
 }
