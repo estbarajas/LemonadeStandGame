@@ -77,7 +77,11 @@ namespace LemonadeStandGame
         }
         public void DisplayRecipe()
         {
-
+            Console.WriteLine("\nInventory:\n");
+            player.recipe.UseLemonAmmount(player.inventory);
+            player.recipe.UseIceAmmount(player.inventory);
+            player.recipe.UseSugarAmmount(player.inventory);
+            player.recipe.UseCupAmmount(player.inventory);
         }
         public void ExitGame()
         {

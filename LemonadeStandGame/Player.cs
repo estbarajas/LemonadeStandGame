@@ -14,6 +14,7 @@ namespace LemonadeStandGame
         public Player()
         {
             inventory = new Inventory();
+            recipe = new Recipe();
             name = "John";
         }
     }
