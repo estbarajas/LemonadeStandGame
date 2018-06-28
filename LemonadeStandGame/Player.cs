@@ -12,12 +12,19 @@ namespace LemonadeStandGame
         public Inventory inventory;
         public Recipe recipe;
         public Wallet wallet;
+        public double income;
         public Player()
         {
             inventory = new Inventory();
             recipe = new Recipe();
             wallet = new Wallet();
             name = "Default Stand";
+        }
+
+        public double SetIncome()
+        {
+            income = wallet.money - 20.00;
+            return income;
         }
     }
 }

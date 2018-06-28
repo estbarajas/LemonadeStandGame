@@ -48,6 +48,10 @@ namespace LemonadeStandGame
                     DisplayStore();
                     StoreLoop();
                     PressEnterToContinue();
+
+                    Console.Clear();
+                    Console.WriteLine("\nThe daily income is: " + player.SetIncome());
+                    PressEnterToContinue();
                     /*
                     Console.Clear(); //RECIPE
                     DisplayRecipe();
