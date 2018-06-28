@@ -30,12 +30,12 @@ namespace LemonadeStandGame
             if (spendMoney)
             {
                 spendableMoney = money;
-                Console.WriteLine("Spent all of it.");
+                Console.WriteLine("\nSpent all of it.");
             }
             else
             {
                 spendableMoney = money - randomNumber.Next(0,6);
-                Console.WriteLine("Spent limited.");
+                Console.WriteLine("\nSpent limited.");
             }
             return spendableMoney;
         }

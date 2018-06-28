@@ -11,6 +11,7 @@ namespace LemonadeStandGame
         public Sugar()
         {
             name = "Sugar";
+            price = 0.09;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace LemonadeStandGame
         public Lemon()
         {
             name = "Lemon";
+            price = 0.05;
         }
     }
 }

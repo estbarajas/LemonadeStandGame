@@ -9,6 +9,7 @@ namespace LemonadeStandGame
     class Item
     {
         public string name;
+        public double price;
         public Item()
         {
 

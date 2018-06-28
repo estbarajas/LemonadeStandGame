@@ -13,12 +13,14 @@ namespace LemonadeStandGame
         public Player player;
         public Day day;
         public string userInput;
+        public int daysPlayedCounter;
         public Game()
         {
             userInterface = new UserInterface();
             store = new Store();
             player = new Player();
             day = new Day();
+            daysPlayedCounter = 1;
         }
         public void ExecuteGame()
         {       
@@ -32,9 +34,8 @@ namespace LemonadeStandGame
             if (userInput == "1")
             {
                 //while loop
-                while(true)
-                {
-                    
+                while(daysPlayedCounter <= 7)
+                {        
                     Console.Clear(); //INVENTORY
                     DisplayInventory();
                     PressEnterToContinue();
@@ -62,6 +63,8 @@ namespace LemonadeStandGame
                     Console.Clear(); //INVENTORY
                     DisplayInventory();
                     player.wallet.MoneyToSpend();
+                    Console.WriteLine("Day: " + daysPlayedCounter);
+                    daysPlayedCounter++;                  
                     Console.ReadLine();
                 }     
             }
