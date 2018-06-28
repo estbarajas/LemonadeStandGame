@@ -34,10 +34,11 @@ namespace LemonadeStandGame
                 //while loop
                 while(true)
                 {
+                    
                     Console.Clear(); //INVENTORY
                     DisplayInventory();
                     PressEnterToContinue();
-
+                    /*
                     Console.Clear(); //WEEKLYFORECAST
                     DisplayWeeklyWeather();
                     PressEnterToContinue();
@@ -57,6 +58,11 @@ namespace LemonadeStandGame
                     Console.Clear(); //GAME
                     Console.WriteLine("\t\nTHE GAME IS RUNNING HERE");
                     PressEnterToContinue();
+                    */
+                    Console.Clear(); //INVENTORY
+                    DisplayInventory();
+                    player.wallet.MoneyToSpend();
+                    Console.ReadLine();
                 }     
             }
             else if (userInput == "2")

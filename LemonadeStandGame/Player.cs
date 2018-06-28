@@ -16,6 +16,7 @@ namespace LemonadeStandGame
         {
             inventory = new Inventory();
             recipe = new Recipe();
+            wallet = new Wallet();
             name = "Default Stand";
         }
     }

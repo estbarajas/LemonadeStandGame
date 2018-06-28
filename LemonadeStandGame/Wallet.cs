@@ -8,10 +8,13 @@ namespace LemonadeStandGame
 {
     class Wallet
     {
+        Random randomNumber = new Random();
         public double money;
+        public double spendableMoney;
+        bool spendMoney;
         public Wallet()
         {
-            money = 20.00;
+            money = randomNumber.Next(35, 56);
         }
         public void AddMoneyAmmount(double profit)
         {
@@ -20,6 +23,21 @@ namespace LemonadeStandGame
         public void RemoveMoneyAmmount(double loss)
         {
             money = money - loss;
+        }
+        public double MoneyToSpend()
+        {
+            spendMoney = randomNumber.Next(0,2) == 0;
+            if (spendMoney)
+            {
+                spendableMoney = money;
+                Console.WriteLine("Spent all of it.");
+            }
+            else
+            {
+                spendableMoney = money - randomNumber.Next(0,6);
+                Console.WriteLine("Spent limited.");
+            }
+            return spendableMoney;
         }
     }
 }
