@@ -39,15 +39,16 @@ namespace LemonadeStandGame
                     Console.Clear(); //INVENTORY
                     DisplayInventory();
                     PressEnterToContinue();
-                    /*
-                    Console.Clear(); //WEEKLYFORECAST
-                    DisplayWeeklyWeather();
-                    PressEnterToContinue();
+                    
+                    //Console.Clear(); //WEEKLYFORECAST
+                    //DisplayWeeklyWeather();
+                    //PressEnterToContinue();
 
                     Console.Clear(); //STORE
                     DisplayStore();
+                    StoreLoop();
                     PressEnterToContinue();
-
+                    /*
                     Console.Clear(); //RECIPE
                     DisplayRecipe();
                     PressEnterToContinue();
@@ -60,12 +61,12 @@ namespace LemonadeStandGame
                     Console.WriteLine("\t\nTHE GAME IS RUNNING HERE");
                     PressEnterToContinue();
                     */
-                    Console.Clear(); //INVENTORY
-                    DisplayInventory();
-                    player.wallet.MoneyToSpend();
-                    Console.WriteLine("Day: " + daysPlayedCounter);
-                    daysPlayedCounter++;                  
-                    Console.ReadLine();
+                    //Console.Clear(); //INVENTORY
+                    //DisplayInventory();
+                    //player.wallet.MoneyToSpend();
+                    //.WriteLine("Day: " + daysPlayedCounter);
+                    //daysPlayedCounter++;                  
+                    //Console.ReadLine();
                 }     
             }
             else if (userInput == "2")
@@ -100,9 +101,35 @@ namespace LemonadeStandGame
         {
             userInterface.StoreMenu();
             store.BuyLemons(player.inventory);
-            store.BuySugar(player.inventory);
-            store.BuyIce(player.inventory);
-            store.BuyCups(player.inventory);
+            //store.BuySugar(player.inventory);
+            //store.BuyIce(player.inventory);
+            //store.BuyCups(player.inventory);
+        }
+        public void StoreLoop()
+        {
+            String option;
+            do
+            {
+                //menu();
+                Console.WriteLine("Buy 50 more lemonksXD enter 1");
+                option = Console.ReadLine();
+                switch (Convert.ToInt32(option))
+                {
+                    case 0:
+                        Console.WriteLine("\nExiting...");
+                        break;
+                    case 1:
+                        Console.WriteLine("\nBuying lemons");
+                        store.BuyLemons(player.inventory);
+                        break;
+                    case 2:
+                        Console.WriteLine("\nBuying sugar");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option.");
+                        break;
+                }
+            } while ((Convert.ToInt32(option)) != 0);
         }
         public void DisplayRecipe()
         {

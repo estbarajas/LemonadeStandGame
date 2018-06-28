@@ -12,9 +12,11 @@ namespace LemonadeStandGame
         {
 
         }
-        public void BuyLemons(Inventory inventory) //CHANGE THE HARD CODED 100
-        {          
-            for (int i = 0; i < 100; i++)
+        public void BuyLemons(Inventory inventory) 
+        {
+            Console.WriteLine("How many lemons would you like to purchase? (0.05 ea)");
+            string userInput = Console.ReadLine();
+            for (int i = 0; i < Convert.ToInt32(userInput); i++)
             {
                 Lemon lemon = new Lemon();
                 inventory.lemons.Add(lemon);
@@ -22,7 +24,9 @@ namespace LemonadeStandGame
         }
         public void BuySugar(Inventory inventory)
         {
-            for (int i = 0; i < 100; i++)
+            Console.WriteLine("How many cups of sugar would you like to purchase? (0.09 ea)");
+            string userInput = Console.ReadLine();
+            for (int i = 0; i < Convert.ToInt32(userInput); i++)
             {
                 Sugar sugar = new Sugar();
                 inventory.sugar.Add(sugar);
@@ -30,7 +34,9 @@ namespace LemonadeStandGame
         }
         public void BuyIce(Inventory inventory)
         {
-            for (int i = 0; i < 100; i++)
+            Console.WriteLine("How many ice cubes would you like to purchase? (0.01 ea)");
+            string userInput = Console.ReadLine();
+            for (int i = 0; i < Convert.ToInt32(userInput); i++)
             {
                 Ice ice = new Ice();
                 inventory.ice.Add(ice);
@@ -38,7 +44,9 @@ namespace LemonadeStandGame
         }
         public void BuyCups(Inventory inventory)
         {
-            for (int i = 0; i < 100; i++)
+            Console.WriteLine("How many paper cups would you like to purchase? (0.03 ea)");
+            string userInput = Console.ReadLine();
+            for (int i = 0; i < Convert.ToInt32(userInput); i++)
             {
                 Cup cups = new Cup();
                 inventory.cups.Add(cups);
