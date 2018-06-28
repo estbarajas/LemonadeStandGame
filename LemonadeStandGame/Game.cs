@@ -100,7 +100,7 @@ namespace LemonadeStandGame
         public void DisplayStore()
         {
             userInterface.StoreMenu();
-            store.BuyLemons(player.inventory);
+            //store.BuyLemons(player.inventory);
             //store.BuySugar(player.inventory);
             //store.BuyIce(player.inventory);
             //store.BuyCups(player.inventory);
@@ -110,26 +110,35 @@ namespace LemonadeStandGame
             String option;
             do
             {
-                //menu();
-                Console.WriteLine("Buy 50 more lemonksXD enter 1");
+                //Console.WriteLine("Buy 50 more lemonksXD enter 1");
+                Console.WriteLine("\nWhich would you like to purchase? Otherwise type 0 to finish buying.");
                 option = Console.ReadLine();
-                switch (Convert.ToInt32(option))
+                switch (option)
                 {
-                    case 0:
-                        Console.WriteLine("\nExiting...");
+                    case "0":
+                        Console.WriteLine("\nExiting Store...");
                         break;
-                    case 1:
-                        Console.WriteLine("\nBuying lemons");
-                        store.BuyLemons(player.inventory);
+                    case "1":
+                        //Console.WriteLine("\nBuying lemons");
+                        store.BuyLemons(player.inventory, player.wallet);
                         break;
-                    case 2:
-                        Console.WriteLine("\nBuying sugar");
+                    case "2":
+                        //Console.WriteLine("\nBuying sugar");
+                        store.BuySugar(player.inventory, player.wallet);
+                        break;
+                    case "3":
+                        //Console.WriteLine("\nBuying ice cubes");
+                        store.BuyIce(player.inventory, player.wallet);
+                        break;
+                    case "4":
+                        //Console.WriteLine("\nBuying cups");
+                        store.BuyCups(player.inventory, player.wallet);
                         break;
                     default:
-                        Console.WriteLine("Invalid option.");
+                        Console.WriteLine("\nInvalid option.");
                         break;
                 }
-            } while ((Convert.ToInt32(option)) != 0);
+            } while (option != "0");
         }
         public void DisplayRecipe()
         {

@@ -12,7 +12,7 @@ namespace LemonadeStandGame
         {
 
         }
-        public void BuyLemons(Inventory inventory) 
+        public void BuyLemons(Inventory inventory, Wallet wallet) 
         {
             Console.WriteLine("How many lemons would you like to purchase? (0.05 ea)");
             string userInput = Console.ReadLine();
@@ -22,7 +22,7 @@ namespace LemonadeStandGame
                 inventory.lemons.Add(lemon);
             }
         }
-        public void BuySugar(Inventory inventory)
+        public void BuySugar(Inventory inventory, Wallet wallet)
         {
             Console.WriteLine("How many cups of sugar would you like to purchase? (0.09 ea)");
             string userInput = Console.ReadLine();
@@ -32,7 +32,7 @@ namespace LemonadeStandGame
                 inventory.sugar.Add(sugar);
             }
         }
-        public void BuyIce(Inventory inventory)
+        public void BuyIce(Inventory inventory, Wallet wallet)
         {
             Console.WriteLine("How many ice cubes would you like to purchase? (0.01 ea)");
             string userInput = Console.ReadLine();
@@ -42,7 +42,7 @@ namespace LemonadeStandGame
                 inventory.ice.Add(ice);
             }
         }
-        public void BuyCups(Inventory inventory)
+        public void BuyCups(Inventory inventory, Wallet wallet)
         {
             Console.WriteLine("How many paper cups would you like to purchase? (0.03 ea)");
             string userInput = Console.ReadLine();
