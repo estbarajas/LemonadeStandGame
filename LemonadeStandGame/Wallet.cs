@@ -14,15 +14,18 @@ namespace LemonadeStandGame
         bool spendMoney;
         public Wallet()
         {
-            money = randomNumber.Next(35, 56);
+            //money = randomNumber.Next(35, 56);
+            money = 20.00;
         }
-        public void AddMoneyAmmount(double profit)
+        public void AddMoneyAmmount(double units, double price)
         {
-            money = money + profit;
+            //money = money + profit;
         }
-        public void RemoveMoneyAmmount(double loss)
+        public void RemoveMoneyAmmount(double units, double price)
         {
-            money = money - loss;
+            double removeMoney = units * price;
+            money = money - removeMoney;
+            Console.WriteLine("Current money stack: " + money);
         }
         public double MoneyToSpend()
         {
