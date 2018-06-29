@@ -53,7 +53,8 @@ namespace LemonadeStandGame
 
                     Console.Clear(); //GAME
                     CustomerProfitPurchase();
-                    Console.WriteLine("\n|Daily Profit: " + player.SetIncome() + "|");
+                    Console.WriteLine("\nCurrent money total: " + player.wallet.money);
+                    Console.WriteLine("|Daily Profit: " + player.SetIncome() + "|");
                     PressEnterToContinue();
 
                     //Console.Clear();
@@ -166,12 +167,16 @@ namespace LemonadeStandGame
         }
         public void CustomerProfitPurchase()
         {
-            Console.WriteLine("Weather Condition: " + day.weather.weatherCondition); //display weather
+            Console.WriteLine("\nGet your lemonade!");
+            Console.WriteLine("Classic price: 25cents");
+            Console.WriteLine("\nWeather condition: " + day.weather.weatherCondition); //display weather
             Console.WriteLine("Weather temperature: " + day.weather.GetTemperature());
+            
             day.DeleteCustomers(); //remove previous day customers
             day.CreateCustomers(); //create a daily list of customers
             day.DisplayCustomerListCount(); //display the susbset group
-            day.DisplayPurchase();  
+            day.DisplayPurchase(player);
+            
         }
        
         public void DisplayWeeklyWeather()

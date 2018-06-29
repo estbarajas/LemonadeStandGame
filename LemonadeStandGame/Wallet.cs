@@ -17,9 +17,12 @@ namespace LemonadeStandGame
             //money = randomNumber.Next(35, 56);
             money = 20.00;
         }
-        public void AddMoneyAmmount(double units, double price)
+        public void AddMoneyAmmount(double price)
         {
-            //money = money + profit;
+            money = money + price;
+            //double addMoney = units * price;
+            //money = money + addMoney;
+            //money = money + addMoney;
         }
         public void RemoveMoneyAmmount(double units, double price)
         {
@@ -27,7 +30,7 @@ namespace LemonadeStandGame
             money = money - removeMoney;
             Console.WriteLine("Current money stack: " + money);
         }
-        public double MoneyToSpend()
+       /* public double MoneyToSpend()
         {
             spendMoney = randomNumber.Next(0,2) == 0;
             if (spendMoney)
@@ -41,6 +44,6 @@ namespace LemonadeStandGame
                 Console.WriteLine("\nSpent limited.");
             }
             return spendableMoney;
-        }
+        } */
     }
 }

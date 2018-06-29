@@ -83,7 +83,7 @@ namespace LemonadeStandGame
             Console.WriteLine("\nThere is this many customers " + customers.Count() + ".");
         }
 
-        public void DisplayPurchase()
+        public void DisplayPurchase(Player player)
         {
             //load the temphere
             //customer.ChanceOfPurchase(weather, randomNumber3);
@@ -95,6 +95,8 @@ namespace LemonadeStandGame
                 {
                     //Console.WriteLine("Customer: " + i + "has percent of " + customers.ElementAt(i).percentChanceToBuy);
                     //Console.WriteLine("bought");
+                    player.wallet.AddMoneyAmmount(.25);
+                     
                     dailySales++;
                 }
                 else if(customers.ElementAt(i).percentChanceToBuy < 50)
@@ -104,10 +106,10 @@ namespace LemonadeStandGame
                 }
                 //Console.WriteLine(customers.ElementAt(i).name);
             }
-            Console.WriteLine("Total daily sales made: " + dailySales + " out of a possible " + customers.Count + ".");
+
+            Console.WriteLine("Total daily sales made: " + dailySales + " out of a possible " + customers.Count + ".");            
             dailySales = 0;
             //Console.WriteLine("Sales affected by weather: " + (customers.Count - dailySales));
         }
-
     }
 }

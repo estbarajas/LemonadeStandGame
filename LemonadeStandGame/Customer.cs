@@ -49,8 +49,7 @@ namespace LemonadeStandGame
                 theTempPercent = random4.Next(35, 66);
               
                 //Console.WriteLine("50% failure rate");
-            }
-            
+            }            
             return theTempPercent;
         }
 
