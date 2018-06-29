@@ -11,23 +11,29 @@ namespace LemonadeStandGame
         
         public string name;
         public int percentChanceToBuy;
-        public Customer(Random randomNumber)
+        public Customer()
         {
+            name = "remove";
             //percentChanceToBuy = randomNumber.Next(40, 61);
+            
         }
-        public void CheckIfBoughtLemonade(Weather weather, Random randomNumber)
+        public void ChanceOfPurchase(Weather weather, Random randomNumber)
         {
+            Console.WriteLine("The temperature is: " + weather.GetTemperature());
             if (weather.temperature > 80)
             {
-                percentChanceToBuy = randomNumber.Next(45, 66); //5:15 25% failure rate
+                percentChanceToBuy = randomNumber.Next(45, 66); 
+                Console.WriteLine("25% failure rate");
             }
             else if (weather.temperature > 70)
             {
-                percentChanceToBuy = randomNumber.Next(40, 66); //10:15 40% failure rate
+                percentChanceToBuy = randomNumber.Next(40, 66); 
+                Console.WriteLine("40% failure rate");
             }
             else if (weather.temperature < 70)
             {
-                percentChanceToBuy = randomNumber.Next(35, 66); //15:15 50% failure rate
+                percentChanceToBuy = randomNumber.Next(35, 66); 
+                Console.WriteLine("50% failure rate");
             }
         }
     }

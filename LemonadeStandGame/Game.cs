@@ -14,8 +14,10 @@ namespace LemonadeStandGame
         public Day day;
         public string userInput;
         public int daysPlayedCounter;
+        Random randomNumber2;
         public Game()
         {
+            randomNumber2 = new Random();
             userInterface = new UserInterface();
             store = new Store();
             player = new Player();
@@ -39,11 +41,14 @@ namespace LemonadeStandGame
                     Console.Clear(); //INVENTORY
                     DisplayInventory();
                     PressEnterToContinue();
-                    
+
+                    Console.Clear();
+                    CustomerProfitPurchase();
+                    PressEnterToContinue();
                     //Console.Clear(); //WEEKLYFORECAST
                     //DisplayWeeklyWeather();
                     //PressEnterToContinue();
-
+                    /* **********************************
                     Console.Clear(); //STORE
                     DisplayStore();
                     StoreLoop();
@@ -52,6 +57,11 @@ namespace LemonadeStandGame
                     Console.Clear();
                     Console.WriteLine("\nThe daily income is: " + player.SetIncome());
                     PressEnterToContinue();
+                    *////////////////////////////*****************
+
+
+
+
                     /*
                     Console.Clear(); //RECIPE
                     DisplayRecipe();
@@ -151,6 +161,17 @@ namespace LemonadeStandGame
             player.recipe.UseIceAmmount(player.inventory);
             player.recipe.UseSugarAmmount(player.inventory);
             player.recipe.UseCupAmmount(player.inventory);
+        }
+        public void CustomerProfitPurchase()
+        {
+            Console.WriteLine(day.weather.weatherCondition);
+            day.DeleteCustomers();
+            day.CreateCustomers();
+            day.DisplayCustomerListCount();
+            for (int i = 0; i < day.customers.Count; i++)
+            {
+                Console.WriteLine(i);
+            }
         }
         public void DisplayWeeklyWeather()
         {

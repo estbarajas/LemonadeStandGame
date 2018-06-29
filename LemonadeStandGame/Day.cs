@@ -11,8 +11,10 @@ namespace LemonadeStandGame
         public List<Customer> customers;
         public Weather weather;
         public int dayOfWeek;
+        Random randomNumber3;
         public Day()
         {
+            randomNumber3 = new Random();
             customers = new List<Customer>();
             weather = new Weather();
             dayOfWeek = 0;
@@ -24,10 +26,11 @@ namespace LemonadeStandGame
             Console.WriteLine("Current day: " + dayOfWeek);
         }
 
-        public void CreatCustomers(Random randomNumber)
+        public void CreateCustomers()
         {
-            int min = 80;
-            int max = 100;
+            Console.WriteLine(weather.weatherCondition);
+            int min = 25;
+            int max = 35;
             //weather.GetForecast();
             if (weather.weatherCondition == "sunny")
             {
@@ -44,12 +47,37 @@ namespace LemonadeStandGame
                 min -= 10;
                 max -= 10;
             }
-            int subsetOfTotalPossibleCustomers = randomNumber.Next(min, max);
+            int subsetOfTotalPossibleCustomers = randomNumber3.Next(min, max);
             for (int i = 0; i < subsetOfTotalPossibleCustomers; i++)
             {
-                Customer customer = new Customer(randomNumber);
+                //Customer customer = new Customer();
+                //Console.WriteLine(i);
+                Customer customer = new Customer();
+                customers.Add(customer);
                 //customers.Add(new Customer(randomNumber));
             }
+        }
+
+        public void DeleteCustomers()
+        {
+            
+            if(customers.Count() > 0)
+            {
+                for (int i = 0; i < customers.Count; i++)
+                {
+                    customers.Clear();
+                }
+                Console.WriteLine("Got them, proof: " + customers.Count);
+            }
+            else if (customers.Count <= 0)
+            {
+                Console.WriteLine("Empty, proof: " + customers.Count);
+            }
+        }
+
+        public void DisplayCustomerListCount()
+        {
+            Console.WriteLine("There is this many customers " + customers.Count());
         }
     }
 }
