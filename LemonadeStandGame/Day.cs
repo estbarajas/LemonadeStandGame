@@ -8,15 +8,19 @@ namespace LemonadeStandGame
 {
     class Day
     {
+        //public Customer customer;
         public List<Customer> customers;
         public Weather weather;
         public int dayOfWeek;
         Random randomNumber3;
+        public int dailySales;
         public Day()
         {
             randomNumber3 = new Random();
             customers = new List<Customer>();
             weather = new Weather();
+            dailySales = 0;
+            //customer = new Customer(weather);
             dayOfWeek = 0;
         }
 
@@ -28,7 +32,6 @@ namespace LemonadeStandGame
 
         public void CreateCustomers()
         {
-            Console.WriteLine(weather.weatherCondition);
             int min = 25;
             int max = 35;
             //weather.GetForecast();
@@ -52,7 +55,7 @@ namespace LemonadeStandGame
             {
                 //Customer customer = new Customer();
                 //Console.WriteLine(i);
-                Customer customer = new Customer();
+                Customer customer = new Customer(weather, randomNumber3);
                 customers.Add(customer);
                 //customers.Add(new Customer(randomNumber));
             }
@@ -67,17 +70,44 @@ namespace LemonadeStandGame
                 {
                     customers.Clear();
                 }
-                Console.WriteLine("Got them, proof: " + customers.Count);
+                //Console.WriteLine("Got them, proof: " + customers.Count);
             }
             else if (customers.Count <= 0)
             {
-                Console.WriteLine("Empty, proof: " + customers.Count);
+                //Console.WriteLine("Empty, proof: " + customers.Count);
             }
         }
 
         public void DisplayCustomerListCount()
         {
-            Console.WriteLine("There is this many customers " + customers.Count());
+            Console.WriteLine("\nThere is this many customers " + customers.Count() + ".");
         }
+
+        public void DisplayPurchase()
+        {
+            //load the temphere
+            //customer.ChanceOfPurchase(weather, randomNumber3);
+            //customer.SetChanceOfPurchase(weather);
+
+            for (int i=0; i <= customers.Count-1; i++)
+            {
+                if (customers.ElementAt(i).percentChanceToBuy >= 50)
+                {
+                    //Console.WriteLine("Customer: " + i + "has percent of " + customers.ElementAt(i).percentChanceToBuy);
+                    //Console.WriteLine("bought");
+                    dailySales++;
+                }
+                else if(customers.ElementAt(i).percentChanceToBuy < 50)
+                {
+                    //Console.WriteLine("Customer: " + i + "has percent of " + customers.ElementAt(i).percentChanceToBuy);
+                    //Console.WriteLine("no buy");
+                }
+                //Console.WriteLine(customers.ElementAt(i).name);
+            }
+            Console.WriteLine("Total daily sales made: " + dailySales + " out of a possible " + customers.Count + ".");
+            dailySales = 0;
+            //Console.WriteLine("Sales affected by weather: " + (customers.Count - dailySales));
+        }
+
     }
 }

@@ -42,22 +42,24 @@ namespace LemonadeStandGame
                     DisplayInventory();
                     PressEnterToContinue();
 
-                    Console.Clear();
-                    CustomerProfitPurchase();
+                    Console.Clear(); //WEEKLYFORECAST
+                    DisplayWeeklyWeather();
                     PressEnterToContinue();
-                    //Console.Clear(); //WEEKLYFORECAST
-                    //DisplayWeeklyWeather();
-                    //PressEnterToContinue();
-                    /* **********************************
+                     
                     Console.Clear(); //STORE
                     DisplayStore();
                     StoreLoop();
                     PressEnterToContinue();
 
-                    Console.Clear();
-                    Console.WriteLine("\nThe daily income is: " + player.SetIncome());
+                    Console.Clear(); //GAME
+                    CustomerProfitPurchase();
+                    Console.WriteLine("\n|Daily Profit: " + player.SetIncome() + "|");
                     PressEnterToContinue();
-                    *////////////////////////////*****************
+
+                    //Console.Clear();
+                    //Console.WriteLine("\n|Daily Profit: " + player.SetIncome() + "|");
+                    //PressEnterToContinue();
+                    
 
 
 
@@ -164,15 +166,14 @@ namespace LemonadeStandGame
         }
         public void CustomerProfitPurchase()
         {
-            Console.WriteLine(day.weather.weatherCondition);
-            day.DeleteCustomers();
-            day.CreateCustomers();
-            day.DisplayCustomerListCount();
-            for (int i = 0; i < day.customers.Count; i++)
-            {
-                Console.WriteLine(i);
-            }
+            Console.WriteLine("Weather Condition: " + day.weather.weatherCondition); //display weather
+            Console.WriteLine("Weather temperature: " + day.weather.GetTemperature());
+            day.DeleteCustomers(); //remove previous day customers
+            day.CreateCustomers(); //create a daily list of customers
+            day.DisplayCustomerListCount(); //display the susbset group
+            day.DisplayPurchase();  
         }
+       
         public void DisplayWeeklyWeather()
         {
             day.weather.GetWeeklyForecast();
