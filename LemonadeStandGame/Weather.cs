@@ -10,15 +10,17 @@ namespace LemonadeStandGame
     {
         public List<string> forecast;
         public int temperature;
+        public string weatherCondition;
         public Weather()
         {
             forecast = new List<string>() {"sunny", "rainy", "hazy"};
+            weatherCondition = GetForecast();
+            SetTemperature();
         }
         public void SetTemperature()
         {
             Random randomNumber = new Random();
-            temperature = randomNumber.Next(60, 100);
-            
+            temperature = randomNumber.Next(60, 101);          
         }
         public int GetTemperature()
         {      
