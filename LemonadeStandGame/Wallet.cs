@@ -22,7 +22,7 @@ namespace LemonadeStandGame
         {
             double removeMoney = units * price;
             money = money - removeMoney;
-            Console.WriteLine("Current money stack: " + money);
+            Console.WriteLine("Current money stack: " + money.ToString("N"));
         }     
     }
 }
