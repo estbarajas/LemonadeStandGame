@@ -35,55 +35,36 @@ namespace LemonadeStandGame
             userInput = Console.ReadLine();
             if (userInput == "1")
             {
-                //while loop
                 while(daysPlayedCounter <= 7)
                 {        
                     Console.Clear(); //INVENTORY
                     DisplayInventory();
                     PressEnterToContinue();
 
-                    Console.Clear(); //WEEKLYFORECAST
-                    DisplayWeeklyWeather();
-                    PressEnterToContinue();
-                     
+                    if(daysPlayedCounter == 1)
+                    {
+                        Console.Clear(); //WEEKLYFORECAST
+                        DisplayWeeklyWeather();
+                        PressEnterToContinue();
+                    }
                     Console.Clear(); //STORE
                     DisplayStore();
                     StoreLoop();
                     PressEnterToContinue();
-
                     Console.Clear(); //GAME
                     CustomerProfitPurchase();
-                    Console.WriteLine("\nCurrent money total: " + player.wallet.money);
-                    Console.WriteLine("|Daily Profit: " + player.SetIncome() + "|");
+                    Console.WriteLine("\nDay: #" + daysPlayedCounter);
+                    Console.WriteLine("Current money total: " + player.wallet.money.ToString("N"));
+                    Console.WriteLine("|Daily Profit: " + player.SetDailyIncome().ToString("N") + "|");
+                    Console.WriteLine("|Total Profit: " + player.SetTotalIncome().ToString("N") + "|");
+                    daysPlayedCounter++;
+
+                    if(daysPlayedCounter == 8)
+                    {
+                        Console.WriteLine("\n\n-----GAME OVER!-----");
+                        PressEnterToContinue();
+                    }
                     PressEnterToContinue();
-
-                    //Console.Clear();
-                    //Console.WriteLine("\n|Daily Profit: " + player.SetIncome() + "|");
-                    //PressEnterToContinue();
-                    
-
-
-
-
-                    /*
-                    Console.Clear(); //RECIPE
-                    DisplayRecipe();
-                    PressEnterToContinue();
-
-                    Console.Clear(); //INVENTORY
-                    DisplayInventory();
-                    PressEnterToContinue();
-
-                    Console.Clear(); //GAME
-                    Console.WriteLine("\t\nTHE GAME IS RUNNING HERE");
-                    PressEnterToContinue();
-                    */
-                    //Console.Clear(); //INVENTORY
-                    //DisplayInventory();
-                    //player.wallet.MoneyToSpend();
-                    //.WriteLine("Day: " + daysPlayedCounter);
-                    //daysPlayedCounter++;                  
-                    //Console.ReadLine();
                 }     
             }
             else if (userInput == "2")
@@ -117,17 +98,12 @@ namespace LemonadeStandGame
         public void DisplayStore()
         {
             userInterface.StoreMenu();
-            //store.BuyLemons(player.inventory);
-            //store.BuySugar(player.inventory);
-            //store.BuyIce(player.inventory);
-            //store.BuyCups(player.inventory);
         }
         public void StoreLoop()
         {
             String option;
             do
             {
-                //Console.WriteLine("Buy 50 more lemonksXD enter 1");
                 Console.WriteLine("\nWhich would you like to purchase? Otherwise type 0 to finish buying.");
                 option = Console.ReadLine();
                 switch (option)
@@ -136,19 +112,15 @@ namespace LemonadeStandGame
                         Console.WriteLine("\nExiting Store...");
                         break;
                     case "1":
-                        //Console.WriteLine("\nBuying lemons");
                         store.BuyLemons(player.inventory, player.wallet);
                         break;
                     case "2":
-                        //Console.WriteLine("\nBuying sugar");
                         store.BuySugar(player.inventory, player.wallet);
                         break;
                     case "3":
-                        //Console.WriteLine("\nBuying ice cubes");
                         store.BuyIce(player.inventory, player.wallet);
                         break;
                     case "4":
-                        //Console.WriteLine("\nBuying cups");
                         store.BuyCups(player.inventory, player.wallet);
                         break;
                     default:
@@ -168,17 +140,14 @@ namespace LemonadeStandGame
         public void CustomerProfitPurchase()
         {
             Console.WriteLine("\nGet your lemonade!");
-            Console.WriteLine("Classic price: 25cents");
-            Console.WriteLine("\nWeather condition: " + day.weather.weatherCondition); //display weather
-            Console.WriteLine("Weather temperature: " + day.weather.GetTemperature());
-            
-            day.DeleteCustomers(); //remove previous day customers
-            day.CreateCustomers(); //create a daily list of customers
-            day.DisplayCustomerListCount(); //display the susbset group
-            day.DisplayPurchase(player);
-            
-        }
-       
+            Console.WriteLine("Lemonade price: 35 cents");
+            Console.WriteLine("\nWeather condition: " + day.weather.weatherCondition); 
+            Console.WriteLine("Weather temperature: " + day.weather.GetTemperature());   
+            day.DeleteCustomers(); 
+            day.CreateCustomers(); 
+            day.DisplayCustomerListCount(); 
+            day.DisplayPurchase(player);    
+        }     
         public void DisplayWeeklyWeather()
         {
             day.weather.GetWeeklyForecast();

@@ -23,10 +23,10 @@ namespace LemonadeStandGame
             gameRules.Add("\n[You decided to open a lemonade stand]");
             gameRules.Add("[Buy ingredients from the shop to create lemonade]");
             gameRules.Add("\n[Make the perfect lemonade recipe]");
-            gameRules.Add("[Set a price to sell the lemonade]");
-            gameRules.Add("\n[Attempt to satisfy customers]");
+            gameRules.Add("[Sell the lemonade]");
+            gameRules.Add("\n[Attempt to make profit]");
             gameRules.Add("[Be aware that price, weather, and recipe can affect sales]");
-            gameRules.Add("\n[Try to maintain customer satisfaction up]");
+            gameRules.Add("\n[Try to maintain enough inventory]");
             gameRules.Add("[Goodluck!]");
             gameRules.Add("\n\n[Press ENTER to continue.]");
             return gameRules;
@@ -38,12 +38,10 @@ namespace LemonadeStandGame
                 Console.WriteLine(rule);
             }
         }
-
         public void MainMenu()
         {
             Console.WriteLine("\n\n1. [Start] \n\n2. [Rules] \n\n3. [Exit]");
         }
-
         public void StoreMenu()
         {
             Console.WriteLine("\nGame Store");

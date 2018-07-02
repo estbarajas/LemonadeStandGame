@@ -35,5 +35,24 @@ namespace LemonadeStandGame
         {
             Console.WriteLine("\n[Ammount of cups owned: " + cups.Count + "]");
         }
+        public void RemoveIngredients(int ammountToRemove)
+        {
+            for (int i = 0; i < ammountToRemove; i++)
+            {
+                lemons.RemoveAt(0);
+                sugar.RemoveAt(0);
+                ice.RemoveAt(0);
+                cups.RemoveAt(0);
+                //Console.WriteLine("Removed 1 of all.");
+            }
+        }
+        public void OutOfMaterials()
+        {
+            Console.WriteLine("Out of materials. Missed sale opportunity.");
+        }
+        public void ChooseRecipe()
+        {
+            RemoveIngredients(1);
+        }
     }
 }

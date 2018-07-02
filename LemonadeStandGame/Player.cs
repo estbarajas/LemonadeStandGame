@@ -12,7 +12,8 @@ namespace LemonadeStandGame
         public Inventory inventory;
         public Recipe recipe;
         public Wallet wallet;
-        public double income;
+        public double totalIncome;
+        public double dailyIncome;
         public Player()
         {
             inventory = new Inventory();
@@ -20,11 +21,15 @@ namespace LemonadeStandGame
             wallet = new Wallet();
             name = "Default Stand";
         }
-
-        public double SetIncome()
+        public double SetTotalIncome()
         {
-            income = wallet.money - 20.00;
-            return income;
+            totalIncome = wallet.money - 20.00;
+            return totalIncome;
+        }
+        public double SetDailyIncome()
+        {
+            dailyIncome = wallet.money - 20.00 - totalIncome;
+            return dailyIncome;
         }
     }
 }
